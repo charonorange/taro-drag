@@ -1,0 +1,91 @@
+{
+	"miniprogramRoot": "dist/",
+	"projectname": "Mini-memorialBook",
+	"description": "旅行纪念册",
+	"appid": "wxc9c86a4e256e0227",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"enhance": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": 0,
+					"name": "每日行程en ",
+					"pathName": "pages/album/index",
+					"query": "album=5&cover= https://images.cdn.uniqueway.com/uploads/2019/01/6f824290-d773-4cf4-9844-711a619243ff.jpg&title=2334234",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "授权",
+					"pathName": "pages/authorization/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/album/upload",
+					"pathName": "pages/album/upload",
+					"query": "album=1&cover= https://images.cdn.uniqueway.com/uploads/2019/01/6f824290-d773-4cf4-9844-711a619243ff.jpg&title=2334234",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "story",
+					"pathName": "pages/story_edit/index",
+					"query": "story_id=1",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/image/index",
+					"pathName": "pages/image/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "带guidebookid",
+					"pathName": "pages/index/index",
+					"query": "guidebook_id=202142",
+					"scene": null
+				}
+			]
+		}
+	}
+}

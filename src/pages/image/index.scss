@@ -1,0 +1,26 @@
+.index {
+  width: 90%;
+  margin: 0 auto;
+  .img-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .img-item {
+      .image-item_pic {
+        width: 100px;
+        height: 100px;
+      }
+    }
+    .img-item-block {
+      background-color: blue($color: #000000);
+    }
+  }
+  .movable-view {
+    border: 1px solid black;
+    .image-item_move-pic{
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+}
