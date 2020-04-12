@@ -1,17 +1,20 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "Mini-memorialBook",
-	"description": "旅行纪念册",
+	"projectname": "taro-drag",
+	"description": "taro拖拽排序",
 	"appid": "wxc9c86a4e256e0227",
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
 		"enhance": false,
 		"postcss": false,
-		"minified": false,
+		"preloadBackgroundData": false,
+		"minified": true,
 		"newFeature": true,
 		"coverView": true,
 		"autoAudits": false,
+		"showShadowRootInWxmlPanel": false,
+		"scopeDataCheck": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -19,7 +22,8 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"bundle": false
 	},
 	"compileType": "miniprogram",
 	"simulatorType": "wechat",

@@ -1,7 +1,7 @@
 const path = require('path')
 
 const config = {
-  projectName: 'Mini-memorialBook',
+  projectName: 'taro-drag',
   date: '2019-12-24',
   designWidth: 750,
   deviceRatio: {
@@ -75,6 +75,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
     module: {
       postcss: {
         autoprefixer: {

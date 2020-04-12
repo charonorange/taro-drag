@@ -5,7 +5,7 @@ import './index.scss'
 export default class Images extends Component {
   constructor() {
     this.config = {
-      navigationBarTitleText: '无二之旅',
+      navigationBarTitleText: '图片拖拽排序',
       disableScroll: true
     }
     this.state = {
@@ -23,47 +23,47 @@ export default class Images extends Component {
         {
           sort: 1,
           id: 1,
-          url: 'https://images.cdn.uniqueway.com/uploads/2017/10/04c22a88-dbe1-4096-83cc-f4b1ed90c7fd.png',
+          url: 'http://www.wudinana.com/cdn/image/images/1.jpg',
         },
         {
           sort: 2,
           id: 2,
-          url: 'https://www.uniqueway.com/assets/img/banner/new_step2.png',
+          url: 'http://www.wudinana.com/cdn/image/images/2.jpg',
         },
         {
           sort: 3,
           id: 3,
-          url: 'https://images.cdn.uniqueway.com/uploads/2017/10/04c22a88-dbe1-4096-83cc-f4b1ed90c7fd.png',
+          url: 'http://www.wudinana.com/cdn/image/images/3.jpg',
         },
         {
           sort: 4,
           id: 4,
-          url: 'https://images.cdn.uniqueway.com/uploads/2017/10/04c22a88-dbe1-4096-83cc-f4b1ed90c7fd.png',
+          url: 'http://www.wudinana.com/cdn/image/images/4.jpg',
         },
         {
           sort: 5,
           id: 5,
-          url: 'https://images.cdn.uniqueway.com/uploads/2017/10/04c22a88-dbe1-4096-83cc-f4b1ed90c7fd.png',
+          url: 'http://www.wudinana.com/cdn/image/images/5.jpg',
         },
         {
           sort: 6,
           id: 6,
-          url: 'https://images.cdn.uniqueway.com/uploads/2017/10/04c22a88-dbe1-4096-83cc-f4b1ed90c7fd.png',
+          url: 'http://www.wudinana.com/cdn/image/images/6.jpg',
         },
         {
           sort: 7,
           id: 7,
-          url: 'https://images.cdn.uniqueway.com/uploads/2017/10/04c22a88-dbe1-4096-83cc-f4b1ed90c7fd.png',
+          url: 'http://www.wudinana.com/cdn/image/images/7.jpg',
         },
         // {
         //   sort: 8,
         //   id: 8,
-        //   url: 'https://images.cdn.uniqueway.com/uploads/2017/10/04c22a88-dbe1-4096-83cc-f4b1ed90c7fd.png',
+        //   url: 'http://www.wudinana.com/cdn/image/images/8.jpg',
         // },
         // {
         //   sort:9,
         //   id: 9,
-        //   url: 'https://images.cdn.uniqueway.com/uploads/2017/10/04c22a88-dbe1-4096-83cc-f4b1ed90c7fd.png',
+        //   url: 'http://www.wudinana.com/cdn/image/images/9.jpg',
         // },
         // {
         //   sort: 10,
@@ -85,7 +85,7 @@ export default class Images extends Component {
     const windowWidth = systemInfo.screenWidth;
 
     const width = windowWidth - 16;
-    const imageWidth = (width - 16) / 4;
+    const imageWidth = width / 3.5;
     this.setState({
       imageWidth
     })
@@ -189,7 +189,8 @@ export default class Images extends Component {
     return (
       <View className='index'>
          <MovableArea
-          style={`min-height: ${this.state.imageWidth}px; height:${this.state.areaHeight}px;width: 100%;border: 1px solid grey`}
+        //  border: 1px solid grey
+          style={`min-height: ${this.state.imageWidth}px; height:${this.state.areaHeight}px;width: 100%;`}
           onTouchMove={this.handleTouchMove.bind(this)}
           onTouchEnd={this.handleTouchEnd.bind(this)}
         >
@@ -198,18 +199,22 @@ export default class Images extends Component {
                 this.state.imageList.map((img, imgIndex) => {
                   return <View className="img-item"
                             key={img.id}
-                            style={`width:${this.state.imageWidth}px;height:${this.state.imageWidth}px`}
+                            style={`width:${this.state.imageWidth}px;height:${this.state.imageWidth}px;background-image:url(${img.url})`}
                             onLongPress={this.onLongPress.bind(this, img)}
                           >
-                      <Image className="image-item_pic" src={img.url} mode="aspectFit" style={`width:${this.state.imageWidth}px`}/>
-                <view class="close">删除{img.id}</view>
+                    {/* <View class="close">删除{img.id}</View> */}
                   </View>
                 })
              }
-            <view class="add-button" style={`height: ${this.state.imageWidth}px; width: ${this.state.imageWidth}px; background: #ffffff;`}>+</view>
-
+             
+            <view class="add-button" style={`height: ${this.state.imageWidth}px; width: ${this.state.imageWidth}px; background: #ffffff;`}>
+              <Image className="image-item_add" src="http://www.wudinana.com/cdn/image/images/add-icon.png" mode="aspectFill"/>
+            </view>
             {
-              this.state.imageList.length%3==1 && <View style={`width:${this.state.imageWidth}px`} className="img-item-block"></View>
+              (this.state.imageList.length%3==1 || this.state.imageList.length%3==0) && <View style={`width:${this.state.imageWidth}px`} className="img-item-block"></View>
+            }
+            {
+              this.state.imageList.length%3==0 && <View style={`width:${this.state.imageWidth}px`} className="img-item-block"></View>
             }
            </View>
            {

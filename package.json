@@ -1,8 +1,8 @@
 {
-	"name": "Mini-memorialBook",
+	"name": "taro-drag",
 	"version": "1.0.0",
 	"private": true,
-	"description": "旅行纪念册",
+	"description": "taro排序",
 	"scripts": {
 		"build:weapp": "taro build --type weapp",
 		"build:swan": "taro build --type swan",
